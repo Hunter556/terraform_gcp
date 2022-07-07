@@ -1,1 +1,235 @@
-
+{
+	"views": {
+		"BASIC": false,
+		"TACTILE": false,
+		"MOSAIC": true
+	},
+	"expectedRounds": 4,
+	"barcode": {
+		"name": "barcode",
+		"mqttHost": "localhost",
+		"mqttPort": 1883,
+		"channels": [
+			{
+				"channel": "sick",
+				"host": "localhost",
+				"port": 2112,
+				"mode": "host",
+				"timeout": 0
+			}
+		]
+	},
+	"cameraGroups": [
+		{
+			"id": "1",
+			"cameras": [
+				"1"
+			]
+		}
+	],
+	"themes": [
+		{
+			"theme": "client-theme",
+			"primaryColor": "#161a29",
+			"accentColor": "#404454",
+			"warnColor": "#660000"
+		},
+		{
+			"theme": "capgemini-theme",
+			"primaryColor": "#0166a3",
+			"accentColor": "#0179b3",
+			"warnColor": "#660000"
+		},
+		{
+			"theme": "ferrari-theme",
+			"primaryColor": "#111111",
+			"accentColor": "#fff200",
+			"warnColor": "#660000"
+		}
+	],
+	"cameras": [
+		{
+			"ip": "192.168.0.101",
+			"channel": "1",
+			"label": "Camera 1",
+			"angle": "0",
+			"exposure_time": "50000.000000",
+			"analog_all": "2",
+			"digital_blue": "1.93",
+			"digital_red": "1.97",
+			"digital_green": "1",
+			"serial_number": "4103734181",
+			"device_link_through_put_limit": "10",
+			"decimation": "1",
+			"offset_x": "0",
+			"offset_y": "0",
+			"width": "1544",
+			"height": "1038",
+			"mode": "CLASSIC"
+		},
+		{
+			"ip": "192.168.0.102",
+			"channel": "2",
+			"label": "Camera 2",
+			"angle": "0",
+			"exposure_time": "450000.000000",
+			"analog_all": "2",
+			"digital_blue": "1.93",
+			"digital_red": "1.97",
+			"digital_green": "1",
+			"serial_number": "4103734183",
+			"device_link_through_put_limit": "10",
+			"decimation": "1",
+			"offset_x": "0",
+			"offset_y": "0",
+			"width": "1544",
+			"height": "1038",
+			"mode": "CLASSIC",
+			"polygone_red": [
+				[
+					449,
+					553
+				],
+				[
+					907,
+					399
+				],
+				[
+					1339,
+					565
+				],
+				[
+					799,
+					759
+				]
+			],
+			"polygone_orange": [
+				[
+					253,
+					519
+				],
+				[
+					813,
+					343
+				],
+				[
+					1453,
+					611
+				],
+				[
+					777,
+					895
+				]
+			]
+		},
+		{
+			"ip": "192.168.0.103",
+			"channel": "3",
+			"label": "Camera 3",
+			"angle": "0",
+			"exposure_time": "150000",
+			"analog_all": "2",
+			"digital_blue": "2.06",
+			"digital_red": "1.65",
+			"digital_green": "1",
+			"serial_number": "4103660700",
+			"device_link_through_put_limit": "10",
+			"decimation": "1",
+			"offset_x": "0",
+			"offset_y": "0",
+			"width": "1936",
+			"height": "1096",
+			"mode": "CLASSIC"
+		}
+	],
+	"opcua": [
+		{
+			"opcAction": "subscribe",
+			"name": "PLC_req_part",
+			"opcNodeId": "ns=4;i=26",
+			"opcDataType": "Boolean",
+			"cleaId": "CASE_STATUS",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "case_status",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "subscribe",
+			"name": "PLC-CV_trigger",
+			"opcNodeId": "ns=4;i=27",
+			"opcDataType": "Boolean",
+			"cleaId": "TRIGGER",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "trigger",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "read",
+			"name": "PLC_identifier",
+			"opcNodeId": "ns=4;i=28",
+			"opcDataType": "Integer",
+			"cleaId": "IDENTIFIER",
+			"cleaDataType": "String",
+			"mqttTopic": "identifier",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "write",
+			"name": "CV_working",
+			"opcNodeId": "ns=4;i=48",
+			"opcDataType": "Boolean",
+			"cleaId": "CV_WORKING",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "cv_working",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "write",
+			"name": "CV_heartbeat",
+			"opcNodeId": "ns=4;i=46",
+			"opcDataType": "Boolean",
+			"cleaId": "CV_HEARTBEAT",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "CV_HEARTBEAT",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "write",
+			"name": "CV_READY",
+			"opcNodeId": "ns=4;i=47",
+			"opcDataType": "Boolean",
+			"cleaId": "CV_READY",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "CV_READY",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "write",
+			"name": "CV_RESULT",
+			"opcNodeId": "ns=4;i=50",
+			"opcDataType": "Boolean",
+			"cleaId": "CV_RESULT",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "CV_RESULT",
+			"converterToFlows": "",
+			"converterToServer": ""
+		},
+		{
+			"opcAction": "write",
+			"name": "CV_RESULT_READY",
+			"opcNodeId": "ns=4;i=49",
+			"opcDataType": "Boolean",
+			"cleaId": "CV_RESULT_READY",
+			"cleaDataType": "Boolean",
+			"mqttTopic": "CV_RESULT_READY",
+			"converterToFlows": "",
+			"converterToServer": ""
+		}
+	]
+}

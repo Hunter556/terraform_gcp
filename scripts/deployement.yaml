@@ -1,0 +1,529 @@
+﻿kind: Deployment
+apiVersion: apps/v1
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    deployment.kubernetes.io/revision: '37'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"clea-flows-app:1.0.0","namespace":"clea"},"fieldPath":"spec.template.spec.containers[?(@.name==\"clea-flows-app\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  selfLink: /apis/apps/v1/namespaces/clea/deployments/clea-flows-app
+  resourceVersion: '1084291596'
+  name: clea-flows-app
+  uid: 5c447b81-19b1-4704-9e9e-a87e7d22662a
+  creationTimestamp: '2022-05-26T09:00:37Z'
+  generation: 52
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-06-22T12:23:54Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime-namespace': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:replicas': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector':
+            'f:matchLabels':
+              .: {}
+              'f:app': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:openshift.io/generated-by': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deploymentconfig': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"clea-assessor"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/clea"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:subPath': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:env':
+                    .: {}
+                    'k:{"name":"AI_SERVICE_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"AI_SERVICE_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"FLOW_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"FLOW_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQTT_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQTT_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":1890,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+                'k:{"name":"clea-business-book"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/clea"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:subPath': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":5000,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+                'k:{"name":"clea-flows"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/clea"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:subPath': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:env':
+                    'k:{"name":"HAC_CAM_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"GENERICID_SOURCE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"BOOK_ORDER_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    .: {}
+                    'k:{"name":"MQTT_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"AI_SERVICE_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"AI_SERVICE_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"GENERICID_TOPIC"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"GENERICID_MATCHER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQTT_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACTIVE_FLOW"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"BOOK_ORDER_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"HAC_CAM_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":1880,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+                'k:{"name":"clea-gui"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/usr/local/apache2/logs"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:subPath': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8080,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+                'k:{"name":"clea-messaging"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/opt/activemq/data"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:subPath': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:env':
+                    .: {}
+                    'k:{"name":"APACHEMQ_DATA"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":1883,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":5672,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8161,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":61613,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":61614,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":61616,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:volumes':
+                .: {}
+                'k:{"name":"clea-app-pv"}':
+                  .: {}
+                  'f:name': {}
+                  'f:persistentVolumeClaim':
+                    .: {}
+                    'f:claimName': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-06-22T14:47:53Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+  namespace: default
+  labels:
+    app: clea-flows-app
+    app.kubernetes.io/component: clea-flows-app
+    app.kubernetes.io/instance: clea-flows-app
+    app.kubernetes.io/part-of: clea-flows-app
+    app.openshift.io/runtime-namespace: clea
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clea-flows-app
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: clea-flows-app
+        deploymentconfig: clea-flows-app
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+    spec:
+      volumes:
+        - name: clea-app-pvc
+          persistentVolumeClaim:
+            claimName: clea-app-pvc
+        - name: system-cm-file
+          configMap:
+              name: system-configmap
+        - name: template-cm-file
+          configMap:
+               name: template-configmap
+        - name: img-cm-file
+          configMap:
+              name: img-configmap
+        - name: img2-cm-file
+          configMap:
+              name: img2-configmap
+                
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: clea-flows
+          env:
+            - name: ACTIVE_FLOW
+              value: Usecase.Book
+            - name: MQTT_URL
+              value: localhost
+            - name: MQTT_PORT
+              value: '1883'
+            - name: HAC_CAM_URL
+              value: localhost
+            - name: HAC_CAM_PORT
+              value: '1890'
+            - name: BOOK_ORDER_URL
+              value: localhost
+            - name: BOOK_ORDER_PORT
+              value: '1890'
+            - name: AI_SERVICE_URL
+              value: localhost
+            - name: AI_SERVICE_PORT
+              value: '5000'
+            - name: GENERICID_TOPIC
+              value: barcode/hac.barcode/1
+            - name: GENERICID_SOURCE
+              value: barcode
+            - name: GENERICID_MATCHER
+              value: (\\w\\w\\w\\w\\w\\w\\w\\w\\w\\w)
+          ports:
+            - containerPort: 1880
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: clea-app-pvc
+              mountPath: /clea
+              subPath: clea
+            - mountPath: /clea/snapshots
+              subPath: snapshots
+              name: clea-app-pvc
+            - mountPath: /clea/thumbnails
+              subPath: thumbnails
+              name: clea-app-pvc
+            - mountPath: /clea/assets
+              subPath: assets
+              name: clea-app-pvc
+            - mountPath: /clea/data
+              subPath: data
+              name: clea-app-pvc              
+            - mountPath: /clea/conf/template.json
+              subPath: template.json
+              name: template-cm-file
+            - mountPath: /clea/conf/system.json
+              subPath: system.json
+              name: system-cm-file
+            - mountPath: /clea/assests/im1.png
+              subPath: im1.png
+              name: img-cm-file
+            - mountPath: /clea/assests/im2.png
+              subPath: im2.png
+              name: img2-cm-file
+          terminationMessagePolicy: File
+          image: >-
+            europe-west9-docker.pkg.dev/test-757ec/clea/flows@sha256:7f35c915c7bb11606b8c12809810a4ffc00e3f63403768b356ff55e09edc7b27
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: clea-messaging
+          env:
+            - name: APACHEMQ_DATA
+              value: /tmp
+          ports:
+            - containerPort: 1883
+              protocol: TCP
+            - containerPort: 5672
+              protocol: TCP
+            - containerPort: 61613
+              protocol: TCP
+            - containerPort: 61614
+              protocol: TCP
+            - containerPort: 61616
+              protocol: TCP
+            - containerPort: 8161
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: clea-app-pvc
+              mountPath: /opt/activemq/data
+              subPath: activemq
+          terminationMessagePolicy: File
+          image: >-
+            europe-west9-docker.pkg.dev/test-757ec/clea/rmohr/activemq@sha256:b5669f141ac5c455b1010b90d348fe78289bba7e2db5659484d99736b696593c
+        - name: clea-gui
+          image: >-
+            europe-west9-docker.pkg.dev/test-757ec/clea/gui@sha256:63b6dd37206e241b1fe276f6433a7bded308d12ab78d293e53848f164c811d65
+          ports:
+            - containerPort: 1616
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - name: clea-app-pvc
+              mountPath: /usr/local/apache2/logs
+              subPath: apache2
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: clea-assessor
+          env:
+            - name: MQTT_URL
+              value: localhost
+            - name: MQTT_PORT
+              value: '1883'
+            - name: FLOW_PORT
+              value: '1880'
+            - name: FLOW_URL
+              value: localhost
+            - name: AI_SERVICE_URL
+              value: localhost
+            - name: AI_SERVICE_PORT
+              value: '5000'
+          ports:
+            - containerPort: 1890
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: clea-app-pvc
+              mountPath: /clea
+              subPath: clea
+          terminationMessagePolicy: File
+          image: >-
+            europe-west9-docker.pkg.dev/test-757ec/clea/assessor@sha256:4af3e9e6f4c3536627434da226d38329d419fd6ed8b35107a003a721024d4f03
+        - name: clea-business-book
+          image: >-
+            europe-west9-docker.pkg.dev/test-757ec/clea/business@sha256:efe6c5ba22c623575f3efb63f8919c6199ae134e1263c6bb9060a64d519ec242
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - name: clea-app-pvc
+              mountPath: /clea
+              subPath: clea
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 52
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2022-06-21T16:35:20Z'
+      lastTransitionTime: '2022-06-21T16:35:20Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-06-22T14:47:53Z'
+      lastTransitionTime: '2022-06-21T15:44:12Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "clea-flows-app-5958c7d4b7" has successfully progressed.

@@ -1,0 +1,71 @@
+{
+	"correlationId": "",
+	"useCase": "",
+	"mode": "LIVE",
+	"creation": "",
+	"update": "",
+	"settings": "",
+	"status": {
+		"ai": "",
+		"user": "",
+		"global": ""
+	},
+	"pictures": [],
+	"expectedData": {
+		"elements": [
+			{
+				"id": "",
+				"attributes": [
+					{
+						"value": "",
+						"class": "title|author|editor|ISBN"
+					}
+				],
+				"quantity": 0
+			}
+		]
+	},
+	"result": {
+		"subjects": [
+			{
+				"picture": {
+					"id": "",
+					"path": ""
+				},
+				"status": {
+					"ai": "",
+					"user": ""
+				},
+				"detections": [
+					{
+						"status": {
+							"ai": "",
+							"user": "",
+							"comment": ""
+						},
+						"boundingBox": [
+							{
+								"x": 0,
+								"y": 0
+							}
+						],
+						"elements": [
+							{
+								"value": "",
+								"class": "title|text"
+							}
+						],
+						"controlSettings": {
+							"disable": false,
+							"mute": false,
+							"time": ""
+						},
+						"reference": "elementId"
+					}
+				]
+			}
+		],
+		"statusList": []
+	},
+	"errors": []
+}
