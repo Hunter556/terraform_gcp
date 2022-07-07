@@ -28,7 +28,7 @@ Nodes on the GKE cluster cannot be reached directly from public internet. Howeve
 
 **Perquisites:**
 
-A service account that has permissions to create different resources.** 
+A service account that has permissions to create the required resources. 
 
 **How to run this script?**
 
