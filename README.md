@@ -49,7 +49,7 @@ We a provide an example of an application deployment to GKE.
 
 After creating the infrastructure with terraform, we launch the script deploy_app.sh to deploy the application to the GKE cluster.
 ```
-bash deploy_app.sh CLUSTER\_NAME LOCATION volume_file_name.yaml deployment_file_name.yaml 
+bash deploy_app.sh CLUSTER_NAME LOCATION volume_file_name.yaml deployment_file_name.yaml 
 ```
 PS: CLUSTER_NAME = project_name-gke
 ```
