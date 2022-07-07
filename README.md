@@ -47,17 +47,17 @@ GCloud and kubectl installed if you are running in a local env.
 
 We a provide an example of an application deployment to GKE.
 
-After creating the infrastructure with terraform, we launch the script deploy\_app.sh to deploy the application to the GKE cluster.
+After creating the infrastructure with terraform, we launch the script deploy_app.sh to deploy the application to the GKE cluster.
 ```
-bash deploy\_app.sh CLUSTER\_NAME LOCATION volume\_file\_name.yaml deployment\_file\_name.yaml 
+bash deploy_app.sh CLUSTER\_NAME LOCATION volume_file_name.yaml deployment_file_name.yaml 
 ```
-PS: CLUSTER\_NAME = project\_name-gke
+PS: CLUSTER_NAME = project_name-gke
 ```
-bash deploy\_app.sh test-757ec-gke europe-west9 volumes.yaml deployement.yaml.
+bash deploy_app.sh test-757ec-gke europe-west9 volumes.yaml deployement.yaml.
 ```
 To destroy the application: 
 ```
-bash destroy\_app.sh test-757ec-gke-1 europe-west9
+bash destroy_app.sh test-757ec-gke-1 europe-west9
 ```
 
-# terraform_gcp
+
