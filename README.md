@@ -41,7 +41,7 @@ A service account that has permissions to create different resources.**
 
 **Perquisites:**
 
-GCloud and kubectl installed if you are running in a local env.
+GCloud and kubectl should be installed if you are running in a local env.
 
 **How to deploy an application :**
 
